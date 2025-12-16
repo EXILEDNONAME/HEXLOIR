@@ -59,3 +59,25 @@ Route::group([
     Route::get('trash', 'CategoryController@trash')->name('trash');
     Route::resource('/', 'CategoryController')->parameters(['' => 'id']);
 });
+
+Route::group([
+    'as' => 'dashboard.main.contents.',
+    'prefix' => 'dashboard/contents',
+    'namespace' => 'App\Http\Controllers\Backend\__Main',
+    'middleware' => ['auth', 'verified'],
+], function(){
+    Route::get('chart', 'ContentController@chart')->name('chart');
+    Route::get('active/{id}', 'ContentController@active')->name('active');
+    Route::get('activities', 'ContentController@activity')->name('activity');
+    Route::get('delete/{id}', 'ContentController@delete')->name('delete');
+    Route::get('delete-permanent/{id}', 'ContentController@delete_permanent')->name('delete-permanent');
+    Route::get('inactive/{id}', 'ContentController@inactive')->name('inactive');
+    Route::get('restore/{id}', 'ContentController@restore')->name('restore');
+    Route::get('selected-active', 'ContentController@selected_active')->name('selected-active');
+    Route::get('selected-inactive', 'ContentController@selected_inactive')->name('selected-inactive');
+    Route::get('selected-delete', 'ContentController@selected_delete')->name('selected-delete');
+    Route::get('selected-delete-permanent', 'ContentController@selected_delete_permanent')->name('selected-delete-permanent');
+    Route::get('selected-restore', 'ContentController@selected_restore')->name('selected-restore');
+    Route::get('trash', 'ContentController@trash')->name('trash');
+    Route::resource('/', 'ContentController')->parameters(['' => 'id']);
+});
