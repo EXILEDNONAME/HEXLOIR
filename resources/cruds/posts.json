@@ -1,7 +1,19 @@
 {
   "fields": [
     {
+      "name": "pin",
+      "type": "integer"
+    },
+    {
       "name": "name",
+      "type": "string"
+    },
+    {
+      "name": "tags",
+      "type": "string"
+    },
+    {
+      "name": "categories",
       "type": "string"
     },
     {

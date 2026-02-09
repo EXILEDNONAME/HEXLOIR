@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Requests\Backend\__System\Application\Datatable\General;
+namespace App\Http\Requests\Backend\__Main\Post;
 
 use App\Http\Requests\BaseFormRequest;
 use Illuminate\Support\Facades\Cache;
 
-class StoreRequest extends BaseFormRequest
+class StoreRequest extends BaseFormRequest 
 {
-    public function rules(): array
+    public function rules(): array 
     {
         return [
-            'name' => ['required', 'unique:system_application_table_generals,name'],
+            //
         ];
     }
 
-    public function persist()
+    public function persist() 
     {
         $file = $this->file('file');
         $model  = app('current.model');
