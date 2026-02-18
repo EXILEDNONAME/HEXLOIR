@@ -1,7 +1,15 @@
 {
   "fields": [
     {
-      "name": "name",
+      "name": "title",
+      "type": "string"
+    },
+    {
+      "name": "tag",
+      "type": "string"
+    },
+    {
+      "name": "category",
       "type": "string"
     },
     {
@@ -11,7 +19,7 @@
   ],
   "validations": [
     {
-      "field": "name",
+      "field": "title",
       "rules": "required"
     }
   ]
